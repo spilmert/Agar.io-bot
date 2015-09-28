@@ -818,7 +818,13 @@ console.log("Running Bot Launcher!");
 
         bestTime = Math.max(nbSeconds, bestTime);
 
-        var displayText = 'Score: ' + ~~(R / 100) + " Current Time: " + nbSeconds + " seconds.";
+                var xxvalue = nbSeconds;
+        var xxminutes = Math.floor(xxvalue/60),  // 15        
+            xxseconds = xxvalue % 60,            // 21.856
+            xxtime = xxminutes + ":" + xxseconds.toFixed(2);  // 15:21.86
+
+        var displayText = 'Score: ' + ~~(R / 100) + " Current Time: " +xxtime;
+
 
         0 != R && (null == ua && (ua = new va(24, "#FFFFFF")), ua.C(displayText), c = ua.L(), a = c.width, f.globalAlpha = .2, f.fillStyle = "#000000", f.fillRect(10, r - 10 - 24 - 10, a + 10, 34), f.globalAlpha = 1, f.drawImage(c, 15, r -
             10 - 24 - 5));
